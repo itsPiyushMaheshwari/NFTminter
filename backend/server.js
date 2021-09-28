@@ -169,15 +169,15 @@ app.post("/add", async function (req, res) {
   }
 });
 
-app.post("/mint", async function (req, res) {
+app.post("/api/mint", async function (req, res) {
   try {
     const { minter, uri, count, type } = req.body;
     let status;
     if (type === "ERC721")
-      status = await ERC721.methods.mintToCaller(minter, uri).send({ from: account.address, gas: 500000 });
+      status = await ERC721.methods.mintToCaller(minter, uri).send({ from: account.address, gas: 800000 , gasPrice: 200000000000 });
     else if (type === "ERC1155")
       status = await ERC1155.methods.mintTocaller(
-        minter, count, encodedParams, uri).send({ from: account.address, gas: 500000 }
+        minter, count, encodedParams, uri).send({ from: account.address, gas: 800000, gasPrice: 20000000000 }
         );
     res.send(status);
   } catch (e) {

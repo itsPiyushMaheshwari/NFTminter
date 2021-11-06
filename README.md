@@ -6,6 +6,7 @@
 #### Run locally
 
 ```bash
+Go in client directory first, then :
 npm install
 npm run build
 npm start

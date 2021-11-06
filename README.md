@@ -3,3 +3,10 @@
 
 <p align="center"><b>🏗️ Mint ERC721 or ERC1155 standard tokens on Polygon (Previously Matic Network)</b></p>
 
+#### Run locally
+
+```bash
+npm install
+npm run build
+npm start
+```
